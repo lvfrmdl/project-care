@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CARE | Campus Access to Reliable Healthcare</title>
+
+<style>
+:root {
+  --forest: #173f35;
+  --green: #245849;
+  --sage: #dce9df;
+  --light: #edf4ee;
+  --cream: #fbfaf5;
+  --white: #fffefa;
+  --text: #20342d;
+  --muted: #66766e;
+  --border: #dce4dc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--green);
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 15px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: var(--forest);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.navlinks {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.navlinks a:hover {
+  color: var(--forest);
+}
+
+.menu {
+  display: none;
+  border: 1px solid var(--border);
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 0 22px;
+}
+
+.hero {
+  padding: 75px 0;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(40px, 6vw, 70px);
+  color: var(--forest);
+  line-height: 1.1;
+  margin: 18px 0;
+}
+
+h2 {
+  color: var(--forest);
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  color: var(--forest);
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--muted);
+  margin: 10px 0;
+}
+
+.hero-image {
+  min-height: 300px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #e5eee4, #c9ddcf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 110px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 18px;
+  background: var(--forest);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 8px 5px 0 0;
+}
+
+.button:hover {
+  background: var(--green);
+}
+
+.secondary {
+  background: white;
+  color: var(--forest);
+  border: 1px solid var(--border);
+}
+
+section {
+  padding: 55px 0;
+  border-top: 1px solid var(--border);
+}
+
+.intro {
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: var(--white);
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(23,63,53,.06);
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.quicklinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.quicklinks a {
+  background: var(--forest);
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.quicklinks a:nth-child(2) {
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.quicklinks a:nth-child(3) {
+  background: #f2e8dc;
+  color: #704a2e;
+}
+
+.notice {
+  background: #f7efe6;
+  padding: 16px;
+  border-left: 4px solid #c47b4c;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.warning {
+  background: #fbefed;
+  border-left: 4px solid #a83e36;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  color: var(--forest);
+  font-weight: bold;
+  margin: 12px 0 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfd9d0;
+  border-radius: 9px;
+  background: white;
+  color: var(--text);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.result {
+  display: none;
+  background: var(--light);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.result.show {
+  display: block;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+footer {
+  background: var(--forest);
+  color: white;
+  padding: 35px 22px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+footer p {
+  color: #dce9df;
+}
+
+@media(max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navlinks {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 15px;
+  }
+
+  .navlinks.open {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+@media(max-width: 550px) {
+  main {
+    padding: 0 15px;
+  }
+
+  .grid,
+  .quicklinks,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <div class="logo">✚ CARE</div>
+
+  <button class="menu" id="menuBtn">☰ Menu</button>
+
+  <div class="navlinks" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#emergency">Emergency</a>
+    <a href="#directory">Healthcare</a>
+    <a href="#checkin">Symptom Check</a>
+    <a href="#menstrual">Menstrual Health</a>
+    <a href="#firstaid">First Aid</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<!-- HOMEPAGE -->
+
+<section class="hero" id="home" style="border:0">
+
+<div>
+  <div class="eyebrow">
+    Campus Access to Reliable Healthcare
+  </div>
+
+  <h1>Healthcare support, made easier to find.</h1>
+
+  <p>
+    CARE is a student-friendly platform designed to
+    improve access to campus healthcare information,
+    medical support contacts and essential health
+    awareness resources.
+  </p>
+
+  <a class="button" href="#directory">Find Healthcare →</a>
+  <a class="button secondary" href="#emergency">Get Support</a>
+</div>
+
+<div class="hero-image">
+  🌿 ✚
+</div>
+
+</section>
+
+<div class="quicklinks">
+  <a href="#emergency">☎ Emergency Help</a>
+  <a href="#directory">⌖ Healthcare Facilities</a>
+  <a href="#firstaid">✚ First Aid Library</a>
+</div>
+
+<!-- EMERGENCY -->
+
+<section id="emergency">
+
+<div class="eyebrow">01 / Emergency Support</div>
+<h2>Emergency & Support Contacts</h2>
+
+<p class="intro">
+  Find the appropriate campus support contact.
+  Counselling support and medical emergency assistance
+  are different services.
+</p>
+
+<div class="grid">
+
+<div class="card">
+  <div class="icon">☎</div>
+  <h3>Counselling Centre</h3>
+  <p>For emotional wellbeing and counselling support.</p>
+
+  <p><strong>0120-7199500</strong></p>
+  <a class="button" href="tel:01207199500">Call Centre</a>
+
+  <p><strong>9289109580</strong></p>
+  <a class="button secondary" href="tel:9289109580">Call Mobile</a>
+</div>
+
+<div class="card">
+  <div class="icon">⌂</div>
+  <h3>Hostel Helpdesk</h3>
+  <p>For hostel-related assistance.</p>
+
+  <p><strong>+91 92891 09579</strong></p>
+  <a class="button" href="tel:+919289109579">Call Helpdesk</a>
+</div>
+
+<div class="card">
+  <div class="icon">✚</div>
+  <h3>Medical Assistance</h3>
+  <p>
+    Campus medical emergency contact and
+    after-hours escalation details.
+  </p>
+  <p><strong>To be confirmed by campus administration.</strong></p>
+</div>
+
+</div>
+
+<div class="warning">
+<strong>Important:</strong>
+Counselling and hostel helpdesk numbers should not
+be assumed to be emergency medical services.
+For an immediate medical emergency, contact local
+emergency services and alert nearby campus staff.
+</div>
+
+</section>
+
+<!-- HEALTHCARE DIRECTORY -->
+
+<section id="directory">
+
+<div class="eyebrow">02 / Healthcare Directory</div>
+<h2>Find Healthcare on Campus</h2>
+
+<p class="intro">
+  Information about available healthcare facilities
+  and first-aid support points.
+</p>
+
+<div class="grid">
+
+<div class="card">
+  <div class="icon">⌖</div>
+  <h3>Wellness Centre</h3>
+
+  <p><strong>Location:</strong> Campus Wellness Centre.</p>
+  <p><strong>Opening Hours:</strong> To be confirmed.</p>
+  <p><strong>Services:</strong> To be confirmed.</p>
+
+  <a class="button"
+  href="https://maps.app.goo.gl/XamGAooPM53BhVSz6"
+  target="_blank">
+  Open Google Maps ↗
+  </a>
+</div>
+
+<div class="card">
+  <div class="icon">＋</div>
+  <h3>Hostel First-Aid Points</h3>
+
+  <p>
+    Information about first-aid availability
+    within residential hostels.
+  </p>
+
+  <p><strong>Locations:</strong> To be verified.</p>
+  <p><strong>Availability:</strong> To be verified.</p>
+</div>
+
+<div class="card">
+  <div class="icon">ⓘ</div>
+  <h3>Facility Information</h3>
+
+  <p>
+    Official timings, accessibility, staff
+    availability and emergency procedures
+    will be added after verification.
+  </p>
+</div>
+
+</div>
+</section>
+
+<!-- SYMPTOM CHECK -->
+
+<section id="checkin">
+
+<div class="eyebrow">03 / Symptom Check-in</div>
+<h2>How Are You Feeling?</h2>
+
+<p class="intro">
+  A guided questionnaire to help students organise
+  their symptoms and understand when professional
+  medical attention may be appropriate.
+</p>
+
+<div class="card">
+
+<form id="symptomForm">
+
+<div class="form-grid">
+
+<div class="full">
+<label for="symptoms">Describe your symptoms</label>
+<textarea id="symptoms" required
+placeholder="Enter your symptoms..."></textarea>
+</div>
+
+<div>
+<label for="duration">Duration</label>
+<select id="duration" required>
+<option value="">Select duration</option>
+<option>Just started</option>
+<option>Less than 24 hours</option>
+<option>1–3 days</option>
+<option>4–7 days</option>
+<option>More than a week</option>
+<option>Recurring</option>
+</select>
+</div>
+
+<div>
+<label for="severity">Severity</label>
+<select id="severity" required>
+<option value="">Select severity</option>
+<option value="mild">Mild</option>
+<option value="moderate">Moderate</option>
+<option value="severe">Severe</option>
+</select>
+</div>
+
+<div class="full">
+<label for="warningSigns">
+Are urgent warning signs present?
+</label>
+
+<select id="warningSigns" required>
+<option value="">Select an option</option>
+<option value="yes">Yes / Possibly</option>
+<option value="no">No</option>
+<option value="unsure">Unsure</option>
+</select>
+</div>
+
+</div>
+
+<p class="small">
+Your answers are processed only in this browser
+and are not transmitted or permanently stored.
+</p>
+
+<button class="button" type="submit">
+Generate Summary
+</button>
+
+<button class="button secondary" type="reset">
+Clear
+</button>
+
+</form>
+
+<div class="result" id="symptomResult"></div>
+
+</div>
+
+<div class="warning">
+<strong>Seek urgent medical assistance</strong> for
+difficulty breathing, chest pain, fainting,
+seizures, severe bleeding, sudden confusion or
+a severe allergic reaction.
+Do not wait for this questionnaire.
+</div>
+
+</section>
+
+<!-- MENSTRUAL HEALTH -->
+
+<section id="menstrual">
+
+<div class="eyebrow">04 / Menstrual Health</div>
+<h2>Understanding Menstrual Health</h2>
+
+<p class="intro">
+  Accessible information about menstrual wellbeing,
+  common symptoms and when to seek professional advice.
+</p>
+
+<div class="grid">
+
+<div class="card">
+  <div class="icon">♡</div>
+  <h3>Common Symptoms</h3>
+  <p>
+    Cramps, bloating, headaches, tiredness,
+    breast tenderness and mood changes.
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">☼</div>
+  <h3>General Self-Care</h3>
+  <p>
+    Rest, stay hydrated, eat regular meals
+    and consider gentle warmth for cramps.
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">⚕</div>
+  <h3>When to Seek Help</h3>
+  <p>
+    Consult a healthcare professional for
+    severe pain, significant changes in periods
+    or symptoms affecting everyday activities.
+  </p>
+</div>
+
+</div>
+
+<div class="warning">
+Seek urgent medical attention for severe sudden
+pelvic pain, very heavy bleeding accompanied by
+faintness or severe weakness.
+</div>
+
+<div class="card" style="margin-top:20px">
+
+<h3>Optional Period Diary</h3>
+
+<p class="small">
+Entries are stored locally in this browser only.
+Avoid using this feature on a shared device.
+</p>
+
+<form id="diaryForm">
+
+<label for="periodDate">Date</label>
+<input type="date" id="periodDate" required>
+
+<label for="periodNote">Symptoms / Notes</label>
+<input id="periodNote" placeholder="Describe symptoms">
+
+<button class="button" type="submit">
+Save Entry
+</button>
+
+</form>
+
+<ul id="diaryList" style="margin:15px 20px"></ul>
+
+<button class="button secondary" id="clearDiary" type="button">
+Clear Diary
+</button>
+
+</div>
+
+<div class="card" style="margin-top:20px">
+
+<h3>Menstrual Symptom Check-in</h3>
+
+<form id="periodForm">
+
+<label for="periodSymptoms">Symptoms</label>
+<input id="periodSymptoms" required
+placeholder="Cramps, headache, nausea...">
+
+<label for="periodImpact">Impact on daily activities</label>
+<select id="periodImpact" required>
+<option value="">Select</option>
+<option value="mild">Mild</option>
+<option value="moderate">Moderate</option>
+<option value="severe">Severe</option>
+</select>
+
+<label for="periodUrgent">Urgent warning signs?</label>
+<select id="periodUrgent" required>
+<option value="">Select</option>
+<option value="yes">Yes / Possibly</option>
+<option value="no">No</option>
+<option value="unsure">Unsure</option>
+</select>
+
+<button class="button" type="submit">
+Review Guidance
+</button>
+
+</form>
+
+<div class="result" id="periodResult"></div>
+
+</div>
+
+</section>
+
+<!-- FIRST AID -->
+
+<section id="firstaid">
+
+<div class="eyebrow">05 / First-Aid Library</div>
+<h2>Basic First-Aid Information</h2>
+
+<p class="intro">
+  General information about responding to common
+  situations while waiting for authorised assistance.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Minor Cuts</h3>
+<p>
+Wash hands, rinse the wound with clean running
+water and cover it with a clean dressing.
+Seek help for deep or persistent bleeding.
+</p>
+</div>
+
+<div class="card">
+<h3>Minor Burns</h3>
+<p>
+Cool the burn under cool or lukewarm running
+water for 20 minutes. Do not apply ice,
+butter or creams. Seek medical help for serious burns.
+</p>
+</div>
+
+<div class="card">
+<h3>Sprains</h3>
+<p>
+Stop the activity, protect the injured area
+and seek medical advice if pain or swelling
+is significant.
+</p>
+</div>
+
+<div class="card">
+<h3>Nosebleeds</h3>
+<p>
+Sit down, lean forward and pinch the soft
+part of the nose continuously. Seek medical
+assistance if bleeding is heavy or persistent.
+</p>
+</div>
+
+<div class="card">
+<h3>Feeling Faint</h3>
+<p>
+Help the person lie down safely and get
+assistance. If they do not recover quickly,
+or have breathing difficulties, seek emergency help.
+</p>
+</div>
+
+<div class="card">
+<h3>Choking</h3>
+<p>
+Choking can be life-threatening. Contact
+emergency services and get a trained
+first aider immediately.
+</p>
+</div>
+
+</div>
+
+<div class="notice">
+<strong>Remember:</strong>
+This library is introductory information,
+not a substitute for certified first-aid training.
+</div>
+
+<h3>Medical References</h3>
+
+<ul style="margin:15px 25px">
+<li>
+<a href="https://www.nhs.uk/conditions/first-aid/"
+target="_blank">NHS First Aid</a>
+</li>
+<li>
+<a href="https://www.redcross.org/take-a-class/first-aid"
+target="_blank">American Red Cross First Aid</a>
+</li>
+<li>
+<a href="https://www.who.int/health-topics/menstrual-health"
+target="_blank">WHO Menstrual Health</a>
+</li>
+</ul>
+
+</section>
+
+<!-- FEEDBACK -->
+
+<section id="feedback">
+
+<div class="eyebrow">06 / Student Feedback</div>
+<h2>Help Us Improve CARE</h2>
+
+<p class="intro">
+  Your feedback can help identify gaps in campus
+  healthcare accessibility.
+</p>
+
+<div class="card">
+
+<form id="feedbackForm">
+
+<label for="access">
+How easy is it to find campus healthcare information?
+</label>
+
+<select id="access" required>
+<option value="">Select</option>
+<option>Very easy</option>
+<option>Somewhat easy</option>
+<option>Neutral</option>
+<option>Somewhat difficult</option>
+<option>Very difficult</option>
+</select>
+
+<label for="useful">
+Would a central healthcare website be useful?
+</label>
+
+<select id="useful" required>
+<option value="">Select</option>
+<option>Yes</option>
+<option>Maybe</option>
+<option>No</option>
+</select>
+
+<label for="hostel">
+Would hostel first-aid points be useful?
+</label>
+
+<select id="hostel" required>
+<option value="">Select</option>
+<option>Yes</option>
+<option>Maybe</option>
+<option>No</option>
+</select>
+
+<label for="suggestions">
+Suggestions for improvement
+</label>
+
+<textarea id="suggestions"
+placeholder="Share your suggestions..."></textarea>
+
+<button class="button" type="submit">
+Preview Feedback
+</button>
+
+</form>
+
+<div class="result" id="feedbackResult"></div>
+
+</div>
+
+<p class="small">
+This is a demonstration form. Feedback is not
+submitted to or collected by a server.
+Do not enter personal or medical information.
+</p>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="eyebrow">07 / About CARE</div>
+<h2>Campus healthcare should be accessible.</h2>
+
+<p class="intro">
+Project CARE (Campus Access to Reliable Healthcare)
+aims to make healthcare information and support
+more accessible to university students through
+a centralised digital platform.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Improve Accessibility</h3>
+<p>
+Provide a central location for verified campus
+healthcare contacts and facility information.
+</p>
+</div>
+
+<div class="card">
+<h3>Promote Awareness</h3>
+<p>
+Provide reliable information about symptoms,
+menstrual health and basic first aid.
+</p>
+</div>
+
+<div class="card">
+<h3>Support Wellbeing</h3>
+<p>
+Encourage informed help-seeking and
+improve awareness of available resources.
+</p>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:20px">
+
+<h3>UN Sustainable Development Goal 3</h3>
+
+<p>
+Good Health and Well-being.
+CARE aligns with SDG 3 through its focus on
+health awareness, accessibility and student wellbeing.
+</p>
+
+<a href="https://sdgs.un.org/goals/goal3"
+target="_blank">
+Explore SDG 3 →
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<h2 style="color:white">CARE ✚</h2>
+
+<p>Campus Access to Reliable Healthcare</p>
+
+<p>
+Making campus healthcare information
+easier to access.
+</p>
+
+<p class="small">
+Student project prototype.
+Not a diagnostic or emergency-response service.
+</p>
+
+<a href="#home" style="color:white">
+Back to top ↑
+</a>
+
+</footer>
+
+<script>
+
+// MOBILE NAVIGATION
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+// SAFE HTML DISPLAY
+
+function escapeHTML(text) {
+  return text.replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+// SHOW RESULTS
+
+function showResult(id, content) {
+  const result = document.getElementById(id);
+  result.innerHTML = content;
+  result.classList.add("show");
+}
+
+// SYMPTOM CHECK-IN
+
+document.getElementById("symptomForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const symptoms =
+    document.getElementById("symptoms").value;
+
+  const duration =
+    document.getElementById("duration").value;
+
+  const severity =
+    document.getElementById("severity").value;
+
+  const warning =
+    document.getElementById("warningSigns").value;
+
+  let guidance;
+
+  if (warning !== "no") {
+    guidance =
+      "Seek urgent professional medical assessment now. " +
+      "Contact emergency services and alert someone nearby.";
+  } else if (severity === "severe") {
+    guidance =
+      "Please seek prompt medical assessment from " +
+      "a qualified healthcare professional.";
+  } else if (
+    severity === "moderate" ||
+    duration === "More than a week" ||
+    duration === "4–7 days"
+  ) {
+    guidance =
+      "Consider arranging a medical consultation, " +
+      "especially if symptoms persist or worsen.";
+  } else {
+    guidance =
+      "Monitor your symptoms. Seek professional advice " +
+      "if they persist, worsen or concern you.";
+  }
+
+  showResult("symptomResult", `
+    <h3>Your Symptom Summary</h3>
+    <p><strong>Symptoms:</strong>
+    ${escapeHTML(symptoms)}</p>
+
+    <p><strong>Duration:</strong>
+    ${escapeHTML(duration)}</p>
+
+    <p><strong>Severity:</strong>
+    ${escapeHTML(severity)}</p>
+
+    <p>${guidance}</p>
+
+    <p class="small">
+    This is general guidance, not a diagnosis.
+    Your responses have not been stored or transmitted.
+    </p>
+  `);
+
+});
+
+document.getElementById("symptomForm")
+.addEventListener("reset", () => {
+  document.getElementById("symptomResult")
+  .classList.remove("show");
+});
+
+// PERIOD DIARY
+
+const diaryKey = "CARE_PERIOD_DIARY";
+
+function getDiary() {
+  try {
+    return JSON.parse(
+      localStorage.getItem(diaryKey) || "[]"
+    );
+  } catch {
+    return [];
+  }
+}
+
+function renderDiary() {
+
+  const list = document.getElementById("diaryList");
+  list.innerHTML = "";
+
+  const entries = getDiary();
+
+  entries.sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
+
+  if (entries.length === 0) {
+    list.textContent = "No diary entries yet.";
+    return;
+  }
+
+  entries.forEach(entry => {
+
+    const li = document.createElement("li");
+
+    li.textContent =
+      entry.date + " — " + entry.note;
+
+    list.appendChild(li);
+
+  });
+}
+
+document.getElementById("diaryForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const date =
+    document.getElementById("periodDate").value;
+
+  const note =
+    document.getElementById("periodNote").value ||
+    "No note";
+
+  const entries = getDiary();
+
+  entries.push({
+    date: date,
+    note: note
+  });
+
+  localStorage.setItem(
+    diaryKey,
+    JSON.stringify(entries)
+  );
+
+  this.reset();
+
+  renderDiary();
+
+});
+
+document.getElementById("clearDiary")
+.addEventListener("click", () => {
+
+  if (confirm("Clear all diary entries?")) {
+
+    localStorage.removeItem(diaryKey);
+
+    renderDiary();
+
+  }
+
+});
+
+renderDiary();
+
+// MENSTRUAL CHECK-IN
+
+document.getElementById("periodForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const symptoms =
+    document.getElementById("periodSymptoms").value;
+
+  const impact =
+    document.getElementById("periodImpact").value;
+
+  const urgent =
+    document.getElementById("periodUrgent").value;
+
+  let guidance;
+
+  if (urgent !== "no") {
+
+    guidance =
+      "Please seek urgent medical assessment now, " +
+      "particularly if you feel faint, have severe " +
+      "sudden pain or experience very heavy bleeding.";
+
+  } else if (impact === "severe") {
+
+    guidance =
+      "Arrange a consultation with a healthcare " +
+      "professional because your symptoms are " +
+      "preventing normal activities.";
+
+  } else {
+
+    guidance =
+      "If symptoms persist, worsen or concern you, " +
+      "consider consulting a healthcare professional.";
+
+  }
+
+  showResult("periodResult", `
+    <h3>Menstrual Health Guidance</h3>
+
+    <p><strong>Symptoms:</strong>
+    ${escapeHTML(symptoms)}</p>
+
+    <p>${guidance}</p>
+
+    <p class="small">
+    This is general information, not a diagnosis.
+    </p>
+  `);
+
+});
+
+// FEEDBACK FORM
+
+document.getElementById("feedbackForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const access =
+    document.getElementById("access").value;
+
+  const useful =
+    document.getElementById("useful").value;
+
+  const hostel =
+    document.getElementById("hostel").value;
+
+  const suggestions =
+    document.getElementById("suggestions").value;
+
+  showResult("feedbackResult", `
+
+    <h3>Feedback Preview</h3>
+
+    <p><strong>Healthcare accessibility:</strong>
+    ${escapeHTML(access)}</p>
+
+    <p><strong>Website usefulness:</strong>
+    ${escapeHTML(useful)}</p>
+
+    <p><strong>Hostel first-aid points:</strong>
+    ${escapeHTML(hostel)}</p>
+
+    <p><strong>Suggestions:</strong>
+    ${escapeHTML(suggestions || "None provided")}</p>
+
+    <p class="small">
+    This is a preview only. Your response has
+    not been submitted or transmitted.
+    </p>
+
+  `);
+
+});
+
+</script>
+
+</body>
+</html>
